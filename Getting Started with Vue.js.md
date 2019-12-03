@@ -173,7 +173,7 @@ In `App.vue`:
 
 #### Add a form to enter the member's info
 Try to use BV to build a form as below:  (Too many codes to show XD)
- ![](images/form_dom.png)
+ ![](images/form_dom.png)  
 (Used BV components:
 [Grid System](https://bootstrap-vue.js.org/docs/components/layout/#layout-and-grid-system),
 [Form group](https://bootstrap-vue.js.org/docs/components/form-group/#form-group),
