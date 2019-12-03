@@ -80,9 +80,8 @@ We can see a bunch of folders and files after the project created. Here we can j
 
 > In `public/` folder, we can see `index.html` is generated, which is the root html file of our project.
 
-## Getting Started
-### Basic concept
-#### \<template\>, \<script\>, \<style\> in .vue
+## Basic concept
+### \<template\>, \<script\>, \<style\> in .vue
 <img src="images/vue_file_1.png" width="200"><br>
 <!-- ![](images/vue_file_1.png) -->
 - `<template>` - HTMLs
@@ -90,15 +89,15 @@ We can see a bunch of folders and files after the project created. Here we can j
 - `<style>` - CSS
   - Use `<style scoped>` can limit the style only applied to this page
 
-#### Data Declaration
+### Data Declaration
 In `<script>`:\
 ![](images/data_declare.png)
 
-#### Methods
+### Methods
 In `<script>`:\
 ![](images/method.png)
 
-#### Conditional and Loop Rendering
+### Conditional and Loop Rendering
 `v-if` `v-else`: Render when the condition is satisfied  
 ```html
 <div id="sorting-hat">
@@ -121,17 +120,17 @@ In `<script>`:\
 
 > We can directly show the defined variables in `{{ }}`, also some simple javascript logic is allowed. e.g., ternary operator
 
-#### Handling User Input
+### Handling User Input
 `v-on`: To attach event listeners that invoke methods on our Vue instances, e.g., on click, submit event.  
 `v-model`: To create two-way data bindings on form input, textarea, and select elements.
 
 We can see more clear examples during the implementation.
 
-### Start making a simple CRUD webpage
-#### Requirement
+## Start making a simple CRUD webpage
+### Requirement
 We want to add a webpage which can **create, retrieve, update and delete** to manage our project team members in the project we just created before.
 ![](images/web_preview.png)
-#### Install BootstrapVue
+### Install BootstrapVue
 To build our website more efficiently we use [BootstrapVue (BV)](https://bootstrap-vue.js.org/).  
 For **installation**, use **Vue CLI** (instead of npm) to install or we will need to install other needed packages on our own.
 ```
@@ -142,7 +141,7 @@ vue add bootstrap-vue
 To learn how to use it, just **search for the needed components in the official documents**, and follow the instruction step by step.  
 > Tag prefixed with `b-` indicate that they are BV components.
 
-#### Adding a new path for our page
+### Adding a new path for our page
 1. Create a new page (`.vue`), let's say `Memebers.vue`
 2. Add a new route for our page to be able to be visited.  
 In `router.js`  
@@ -171,7 +170,7 @@ In `App.vue`:
 ![](images/add_link.png)
 >`<router-view>` will render all the components defined in `router.js` here.
 
-#### Add a form to enter the member's info
+### Add a form to enter the member's info
 Try to use BV to build a form as below:  (Too many codes to show XD)
  ![](images/form_dom.png)  
 (Used BV components:
@@ -208,11 +207,11 @@ data () {
 In this way, the value of `formData.name` is bound to the user's input.
 > We can simply add ```<p>{{ formData.name }}</p>``` and type something in the form to see the effect.
 
-#### Communicate with server (CRUD)
+### Communicate with server (CRUD)
 > For the server we use in this tutorial is https://yingweb.azurewebsites.net, which connects to a PostgreSQL database, and is able to handle CRUD requests to manipulate the database.  
 We can directly visit the link to check current data in the database.
 
-##### Retrieve
+#### Retrieve
 Let's show the database data on our website.
 1. Add a table for display
 ```html
@@ -260,7 +259,7 @@ mounted () {
 Now refresh the webpage, and we will see the table shows up with DB data.
 ![](images/table.png)
 
-##### Create
+#### Create
 1. Add a submit button with type `submit` in the form we built before, and call self-defined function to handle the submit event.  
 ```html
 <b-form v-on:submit.prevent="createMember">
@@ -287,7 +286,7 @@ methods: {
 That's it, now we can create a member with the submit button.
 <!-- ![](images/createMember.png) -->
 
-##### Delete
+#### Delete
 1. Add a field in the tabel to place the deletion button
 ```js
 fields: [..., 'action']
@@ -318,7 +317,7 @@ methods: {
 ```
 Now press the delete button to see the effect.
 
-##### Update
+#### Update
 1. Add a button in the table (in field 'action') for update
 ```html
 <b-button @click="onUpdateClick">Update</b-button>
