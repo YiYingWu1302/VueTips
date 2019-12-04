@@ -346,7 +346,7 @@ methods: {
 }
 ```
 (Used BV components:
-[Modals](https://bootstrap-vue.js.org/docs/components/modal/))
+[Modals](https://bootstrap-vue.js.org/docs/components/modal/))  
 4. Then in `onUpdateClick()` method:
 ```js
 onUpdateClick (item) {
