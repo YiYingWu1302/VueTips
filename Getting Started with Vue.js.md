@@ -21,7 +21,7 @@
 **Visual Studio Code**  
 See [official website](https://code.visualstudio.com/) for installation
 
-#### Recommemded extensions in VSCode
+#### Recommended extensions in VSCode
 - Vetur (formatting code for Vue)
   - Then we can add [prettier config](https://prettier.io/docs/en/configuration.html#basic-configuration) for desired formatting
   - To format on save, add `"editor.formatOnSave": true,` in `setting.json` (the setting file for VSCode)
@@ -60,7 +60,7 @@ Example settings:
 #### Start a local server
 Move to the project folder and use the following command to run the dev server.
 ```text
-npm run dev
+npm run serve
 ```
 When running the dev server, [hot-reload](https://vue-loader.vuejs.org/guide/hot-reload.html#state-preservation-rules) is enabled for a better development experience. <br>
 Browse `http://localhost:8080/` to see the default page.
