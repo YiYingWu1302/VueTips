@@ -1,7 +1,7 @@
 # Getting Started with Vue.js
 ***This tutorial is for Vue version 2.x***
 ## Prerequisites
-- Node.js and npm installed
+- [Node.js and npm installed](https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/)
 - Knowledge of HTML/CSS
 - Knowledge of Javascript
 - [DOM (link provided by Chenglin Yang)](https://ithelp.ithome.com.tw/articles/10202689)
