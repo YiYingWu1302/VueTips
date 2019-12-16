@@ -97,6 +97,14 @@ In `<script>`:\
 In `<script>`:\
 ![](images/method.png)
 
+### Mustache
+`{{ }}`: Text / JS expression interpolation
+```html
+<p>Message: {{ msg }}</p> // msg will be replaced with its value
+<p>{{ ok ? 'YES' : 'NO' }}</p>
+<p>{{ number + 1 }}</p>
+```
+
 ### Conditional and Loop Rendering
 `v-if` `v-else`: Render when the condition is satisfied  
 ```html
@@ -110,7 +118,7 @@ In `<script>`:\
 `v-for`: Repeat rendering until the condition is satisfied  
 ```html
 <ul id="example">
-    <li v-for="item in items">
+    <li v-for="(item, index) in items">
         {{ item }}
     </li>
 </ul>
