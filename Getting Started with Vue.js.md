@@ -200,15 +200,15 @@ Now we can enter the information on the website, but how do we get the input val
 1. Add needed variables in `<script> data()`  
 ```js
 data () {
-    return {
-      formData: {
-        name: null,
-        email: null,
-        sex: null,
-        age: null
-      }
+  return {
+    formData: {
+      name: null,
+      email: null,
+      sex: null,
+      age: null
     }
-  },
+  }
+},
 ```
 <!-- ![](images/form_data.png) -->
 2. Add `v-model` property for the components, e.g., for the "name" column:  
