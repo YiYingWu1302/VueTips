@@ -128,10 +128,19 @@ In `<script>`:\
 
 > We can directly show the defined variables in `{{ }}`, also some simple javascript logic is allowed. e.g., ternary operator
 
-### Handling User Input
+### 3 Important Directives
 `v-on`: To attach event listeners that invoke methods on our Vue instances, e.g., on click, submit event.  
+```html
+<button v-on:click="onClick()"/>
+```
+`v-bind`: Dynamically bind one or more attributes.  
+```html
+<button v-bind:id=“myId”/>
+```
 `v-model`: To create two-way data bindings on form input, textarea, and select elements.
-
+```html
+<input v-model=“userInput”/>
+```
 We can see more clear examples during the implementation.
 
 ## Start making a simple CRUD webpage
