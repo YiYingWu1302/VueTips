@@ -135,11 +135,11 @@ In `<script>`:\
 ```
 `v-bind`: Dynamically bind one or more attributes.  
 ```html
-<button v-bind:id=“myId”/>
+<button v-bind:id="myId"/>
 ```
 `v-model`: To create two-way data bindings on form input, textarea, and select elements.
 ```html
-<input v-model=“userInput”/>
+<input v-model="userInput"/>
 ```
 We can see more clear examples during the implementation.
 
