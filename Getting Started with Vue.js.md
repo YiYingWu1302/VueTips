@@ -366,24 +366,21 @@ Now press the delete button to see the effect.
   </div>
 </b-modal>
 ```
-3. Add `updateMember` method
+(Used BV components:
+[Modals](https://bootstrap-vue.js.org/docs/components/modal/))  
+3. Add corresponding methods
 ```js
 methods: {
+  onUpdateClick (item) {
+    this.$bvModal.show('bv-modal-update') // show modal
+    this.updateData = Object.assign({}, item) // copy the item to be updated
+  }
+  
   async updateMember(index) {
     await axios.put(`${ENDPOINT}/${index}`, this.updateData);
     return this.getMembers();
   }
 }
-```
-(Used BV components:
-[Modals](https://bootstrap-vue.js.org/docs/components/modal/))  
-4. Then in `onUpdateClick()` method:
-```js
-onUpdateClick (item) {
-  this.$bvModal.show('bv-modal-update') // show modal
-  this.updateData = Object.assign({}, item) // copy the item to be updated
-}
-```
 
 ## Conclusion
 In this tutorial, we know how to build a simple CRUD webpage using Vue.js and BootstrapVue. This is just a quick start to work with Vue, and help you be able to read other existing projects with less pain (XD). To learn deeper, following the official guides or reading the front-end projects on github could help a lot.
