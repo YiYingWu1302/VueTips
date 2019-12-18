@@ -369,9 +369,9 @@ Now press the delete button to see the effect.
 3. Add `updateMember` method
 ```js
 methods: {
-  async deleteMember (index) {
-    await axios.delete(`${ENDPOINT}/${index}`)
-    return this.getMembers() // retrieve the latest data
+  async updateMember(index) {
+    await axios.put(`${ENDPOINT}/${index}`, this.updateData);
+    return this.getMembers();
   }
 }
 ```
