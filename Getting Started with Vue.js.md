@@ -280,10 +280,10 @@ Now refresh the webpage, and we will see the table shows up with DB data.
 1. Add a submit button with type `submit` in the form we built before, and call self-defined function to handle the submit event.  
 ```html
 <b-form v-on:submit.prevent="createMember">
-    ...
-    <div class="text-center">
-      <b-button type="submit">Submit</b-button>
-    </div>
+  ...
+  <div class="text-center">
+    <b-button type="submit">Submit</b-button>
+  </div>
 </b-form>
 ```
 <!-- ![](images/submit.png) -->
@@ -292,11 +292,11 @@ Now refresh the webpage, and we will see the table shows up with DB data.
 2. Add `createMember` method  
 ```js
 methods: {
-    async createMember () {
-      await axios.post(ENDPOINT, this.formData)
-      this.resetForm() // self-defined method to set all the values of formData to be null
-      return this.getMembers() // retrieve the latest data
-    }
+  async createMember () {
+    await axios.post(ENDPOINT, this.formData)
+    this.resetForm() // self-defined method to set all the values of formData to be null
+    return this.getMembers() // retrieve the latest data
+  }
 }
 ```
 
@@ -312,11 +312,11 @@ fields: [..., 'action']
 2. Add a button in the table for deletion
 ```html
 <b-table outlined hover :items="members" :fields="fields" align="center">
-    <template v-slot:cell(action)="data"> <!-- for the field "action"-->
-      <b-button @click="deleteMember(data.item.id)" class="mr-2" variant="danger"
-        >Delete</b-button
-      >
-    </template>
+  <template v-slot:cell(action)="data"> <!-- for the field "action"-->
+    <b-button @click="deleteMember(data.item.id)" class="mr-2" variant="danger"
+      >Delete</b-button
+    >
+  </template>
 </b-table>
 ```
 - @ is the shorthand of v-on  
@@ -326,10 +326,10 @@ fields: [..., 'action']
 3. Add `deleteMember` method
 ```js
 methods: {
-    async deleteMember (index) {
-      await axios.delete(`${ENDPOINT}/${index}`)
-      return this.getMembers() // retrieve the latest data
-    }
+  async deleteMember (index) {
+    await axios.delete(`${ENDPOINT}/${index}`)
+    return this.getMembers() // retrieve the latest data
+  }
 }
 ```
 Now press the delete button to see the effect.
@@ -342,24 +342,24 @@ Now press the delete button to see the effect.
 2. Here we use a modal to enter the update information
 ```html
 <b-modal id="bv-modal-update" title="Update member's info" hide-footer centered>
-    <b-form-input class="mb-1" v-model="updateData.name" placeholder="name"></b-form-input>
-    <b-form-input class="mb-1" v-model="updateData.email" placeholder="email"></b-form-input>
-    <b-form-input class="mb-1" v-model="updateData.sex" placeholder="sex"></b-form-input>
-    <b-form-input class="mb-1" v-model="updateData.age" placeholder="age"></b-form-input>
-    <div class="text-center mt-3">
-      <b-button @click="$bvModal.hide('bv-modal-update'), updateMember(updateData.id)"
-        >Sumbit</b-button
-      >
-    </div>
+  <b-form-input class="mb-1" v-model="updateData.name" placeholder="name"></b-form-input>
+  <b-form-input class="mb-1" v-model="updateData.email" placeholder="email"></b-form-input>
+  <b-form-input class="mb-1" v-model="updateData.sex" placeholder="sex"></b-form-input>
+  <b-form-input class="mb-1" v-model="updateData.age" placeholder="age"></b-form-input>
+  <div class="text-center mt-3">
+    <b-button @click="$bvModal.hide('bv-modal-update'), updateMember(updateData.id)"
+      >Sumbit</b-button
+    >
+  </div>
 </b-modal>
 ```
 3. Add `updateMember` method
 ```js
 methods: {
-    async deleteMember (index) {
-      await axios.delete(`${ENDPOINT}/${index}`)
-      return this.getMembers() // retrieve the latest data
-    }
+  async deleteMember (index) {
+    await axios.delete(`${ENDPOINT}/${index}`)
+    return this.getMembers() // retrieve the latest data
+  }
 }
 ```
 (Used BV components:
@@ -367,8 +367,8 @@ methods: {
 4. Then in `onUpdateClick()` method:
 ```js
 onUpdateClick (item) {
-    this.$bvModal.show('bv-modal-update') // show modal
-    this.updateData = Object.assign({}, item) // copy the item to be updated
+  this.$bvModal.show('bv-modal-update') // show modal
+  this.updateData = Object.assign({}, item) // copy the item to be updated
 }
 ```
 
