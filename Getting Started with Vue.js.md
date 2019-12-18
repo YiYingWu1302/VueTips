@@ -306,7 +306,20 @@ That's it, now we can create a member with the submit button.
 #### Delete
 1. Add a field in the tabel to place the deletion button
 ```js
-fields: [..., 'action']
+fields: [
+  'id',
+  {
+    key: 'name',
+    sortable: true,
+  },
+  {
+    key: 'email',
+    label: 'E-mail',
+  },
+  'sex',
+  'age',
+  'action', // button's header
+]
 ```
 ![](images/table_header.png)  
 2. Add a button in the table for deletion
