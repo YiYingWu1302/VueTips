@@ -259,9 +259,7 @@ Then we can make a get requrest with `axios`
 methods: {
     async getMembers () {
       const res = await axios.get(ENDPOINT)
-      // console.log(res) // to see what the response looks like
-      // res.data is an array of objects, storing the result of db query
-      this.members = res.data // "members" is declared in data(), use "this" to access
+      this.members = res.data
     }
 }
 ```
