@@ -257,12 +257,12 @@ export default{
 Then we can make a get requrest with `axios`
 ```js
 methods: {
-    async getMembers () {
-      const res = await axios.get(ENDPOINT)
-      // console.log(res) // to see what the response looks like
-      // res.data is an array of objects, storing the result of db query
-      this.members = res.data // "members" is declared in data(), use "this" to access
-    }
+  async getMembers () {
+    const res = await axios.get(ENDPOINT)
+    // console.log(res) // to see what the response looks like
+    // res.data is an array of objects, storing the result of db query
+    this.members = res.data // "members" is declared in data(), use "this" to access
+  }
 }
 ```
 3. To retrieve data once we visit the page  
@@ -270,8 +270,8 @@ Add the method in the `mounted` lifecycle hook, in this way, the method get call
 ```js
 // same level as data() and methods
 mounted () {
-    return this.getMembers()
-  },
+  return this.getMembers()
+},
 ```
 Now refresh the webpage, and we will see the table shows up with DB data.
 ![](images/table.png)
