@@ -350,7 +350,10 @@ Now press the delete button to see the effect.
 #### Update
 1. Add a button in the table (in field 'action') for update
 ```html
-<b-button @click="onUpdateClick">Update</b-button>
+<template v-slot:cell(action)="data"> <!-- for the field "action"-->
+  ...
+  <b-button @click="onUpdateClick(data.item)">Update</b-button>
+</template>
 ```
 2. Here we use a modal to enter the update information
 ```html
