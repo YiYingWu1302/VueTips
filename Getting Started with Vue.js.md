@@ -375,12 +375,13 @@ methods: {
     this.$bvModal.show('bv-modal-update') // show modal
     this.updateData = Object.assign({}, item) // copy the item to be updated
   }
-  
+
   async updateMember(index) {
     await axios.put(`${ENDPOINT}/${index}`, this.updateData);
     return this.getMembers();
   }
 }
+```
 
 ## Conclusion
 In this tutorial, we know how to build a simple CRUD webpage using Vue.js and BootstrapVue. This is just a quick start to work with Vue, and help you be able to read other existing projects with less pain (XD). To learn deeper, following the official guides or reading the front-end projects on github could help a lot.
